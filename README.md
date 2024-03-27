@@ -2,10 +2,13 @@
 
 ## Introduction
 This is the code for reproducing the results of the paper [Grid-Mapping Pseudo-Count Constraint for Offline Reinforcement Learning](address)
+
 This code builds up from [lifelong-learning] [Reset-Free Lifelong Learning with Skill-Space Planning]([https://github.com/kzl/lifelong_rl]), originally derived from [rlkit]([https://github.com/vitchyr/rlkit](https://github.com/rail-berkeley/rlkit)). 
 ## Prerequisites
 Python 3.7 with pytorch 1.7.1
+
 mujoco 2.1.0
+
 d4rl[https://github.com/Farama-Foundation/D4RL]
 
 ## Installation and Usage
