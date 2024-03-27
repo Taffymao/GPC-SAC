@@ -14,8 +14,8 @@ Here is an example of how to install all the dependencies on Ubuntu:
 ```bash
 conda create -n GPC-SAC python=3.7
 conda activate GPC-SAC
-cd GPC-SAC
-pip install --no-cache-dir -r requirements.txt
+cd GPC-SAC-master
+pip install -r requirements.txt
 git clone [https://github.com/Farama-Foundation/D4RL.git]
 cd d4rl
 # Remove lines including 'dm_control' in setup.py
@@ -34,4 +34,4 @@ python -m scripts.gpc_sac --env_name halfcheetah-medium-v2 --seed 0 --state_n 7 
 ```
 ## Execution
 
-The core implementation is given in `lifelong_rl/trainers/q_learning/gpc-sac`
+The core implementation is given in `GPC-SAC-main\lifelong_rl/trainers/q_learning/gpc-sac`
