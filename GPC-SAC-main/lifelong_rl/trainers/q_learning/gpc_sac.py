@@ -124,8 +124,10 @@ class PEVITrainer(TorchTrainer):
         for i in range(self.num_qs):  # each ensemble member has its optimizer
             self.qfs_optimizer.append(optimizer_class(self.qfs[i].parameters(), lr=qf_lr))
         self.amin, self.amax, self.s_curr, self.s_next,s_size = self.replay_buffer.state_transform(self.state_n)
-        self.num_sa = torch.empty([int(s_size+1),int(((action_n+1) ** (self.replay_buffer._action_dim)))])
-
+        if action_n%1 ==0:
+            self.num_sa = torch.empty([int(s_size+1),int(((action_n+1) ** (self.replay_buffer._action_dim)))])
+        else:
+            self.num_sa = torch.empty([int(s_size+1),int(2*((action_n+1) ** (self.replay_buffer._action_dim)))])
 
     def func(self, obs, act, mean=False):
         # Using the main-Q network to calculate the bootstrapped uncertainty
