@@ -38,3 +38,5 @@ python -m scripts.gpc_sac --env_name halfcheetah-medium-v2 --seed 0 --state_n 7 
 ## Execution
 
 The core implementation is given in `GPC-SAC-main\lifelong_rl/trainers/q_learning/gpc-sac`
+
+In case of any questions, bugs, suggestions or improvements, please feel free to open an issue.
