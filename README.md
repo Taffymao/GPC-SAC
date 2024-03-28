@@ -37,6 +37,6 @@ python -m scripts.gpc_sac --env_name halfcheetah-medium-v2 --seed 0 --state_n 7 
 ```
 ## Execution
 
-The core implementation is given in `GPC-SAC-main\lifelong_rl/trainers/q_learning/gpc-sac`
+The core implementation is given in `GPC-SAC-main\lifelong_rl/trainers/q_learning/gpc-sac`, some other changes are in `GPC-SAC-main\data_management/replay_buffers/mujoco_replay_buffer` and `GPC-SAC-main\data_management/replay_buffers/env_replay_buffer`.
 
 In case of any questions, bugs, suggestions or improvements, please feel free to open an issue.
