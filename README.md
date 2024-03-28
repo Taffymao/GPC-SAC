@@ -1,9 +1,9 @@
 # PBRL
 
 ## Introduction
-This is the code for reproducing the results of the paper [Grid-Mapping Pseudo-Count Constraint for Offline Reinforcement Learning](address)
+This is the code for reproducing the results of the paper \[Grid-Mapping Pseudo-Count Constraint for Offline Reinforcement Learning](address)
 
-This code builds up from [lifelong-learning] [Reset-Free Lifelong Learning with Skill-Space Planning]([https://github.com/kzl/lifelong_rl]), originally derived from [rlkit]([https://github.com/vitchyr/rlkit](https://github.com/rail-berkeley/rlkit)). 
+This code builds up from \[lifelong-learning] [https://github.com/kzl/lifelong_rl], originally derived from \[rlkit][https://github.com/vitchyr/rlkit]. 
 ## Prerequisites
 Python 3.7 with pytorch 1.7.1
 
