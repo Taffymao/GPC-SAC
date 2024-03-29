@@ -127,7 +127,7 @@ class PEVITrainer(TorchTrainer):
         if action_n%1 ==0:
             self.num_sa = torch.empty([int(s_size+1),int(((action_n+1) ** (self.replay_buffer._action_dim)))])
         else:
-            self.num_sa = torch.empty([int(s_size+1),int(2*((action_n+1) ** (self.replay_buffer._action_dim)))])
+            self.num_sa = torch.empty([int(s_size+1),int(4*((action_n+1) ** (self.replay_buffer._action_dim)))])
 
     def func(self, obs, act, mean=False):
         # Using the main-Q network to calculate the bootstrapped uncertainty
