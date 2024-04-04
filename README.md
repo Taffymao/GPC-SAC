@@ -1,7 +1,7 @@
 # PBRL
 
 ## Introduction
-This is the code for reproducing the results of the paper \[Grid-Mapping Pseudo-Count Constraint for Offline Reinforcement Learning](address)
+This is the code for reproducing the results of the paper \[Grid-Mapping Pseudo-Count Constraint for Offline Reinforcement Learning [http://arxiv.org/abs/2404.02545]
 
 This code builds up from \[lifelong-learning] [https://github.com/kzl/lifelong_rl], originally derived from \[rlkit][https://github.com/vitchyr/rlkit]. 
 ## Prerequisites
