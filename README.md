@@ -29,11 +29,11 @@ pip install -e .
 
 For running GPC-SAC on diffent environments, run:
 ```bash
-python -m scripts.gpc_sac --env_name [ENVIRONMENT] --seed [K]  --state_n [N]  --state_n [N]  --beta [I]
+python -m scripts.gpc_sac --env_name [ENVIRONMENT] --seed [K]  --action_n [N]  --state_n [N]  --beta [I]
 ```
 For example to reproduce the GPC-SAC results for halfcheetah-medium-v2, run:
 ```bash
-python -m scripts.gpc_sac --env_name halfcheetah-medium-v2 --seed 0 --state_n 7 --action_n 7 --beta 2
+python -m scripts.gpc_sac --env_name halfcheetah-medium-v2 --seed 0 --action_n 7 --state_n 7 --beta 2
 ```
 ## Execution
 
