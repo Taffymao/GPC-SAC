@@ -168,7 +168,6 @@ class PEVITrainer(TorchTrainer):
         amin = torch.tensor(amin).cuda()
         amax = torch.tensor(amax).cuda()
         if self.action_n % 1 != 0:
-            #action=1.5*(action-amin)/(0.000001+amax-amin)
             action = ((action - 0.5*(1+self.action_n)*amin+0.5*(self.action_n-1)*amax)/ (self.action_n*(0.000001 + amax - amin)))
         else:
             action = ((int(self.action_n) * (action - amin)) / ((0.000001 + amax - amin)))
