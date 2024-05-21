@@ -206,8 +206,9 @@ class PEVITrainer(TorchTrainer):
         """ Policy and Alpha Loss
 		"""
 
-        new_obs_actions, policy_mean, policy_log_std, log_pi, *_ = self.policy(
-            obs, reparameterize=True, return_log_prob=True)
+        new_curr_actions, policy_mean, policy_log_std, log_pi, *_ = self.policy(obs, reparameterize=True, return_log_prob=True)
+
+        new_next_actions, _, _, new_log_pi, *_ = self.policy(next_obs, reparameterize=True, return_log_prob=True)
 
         if self.use_automatic_entropy_tuning:
             alpha_loss = -(self.log_alpha *
@@ -223,11 +224,7 @@ class PEVITrainer(TorchTrainer):
         """
 		QF Loss  Q Training
 		"""
-        new_next_actions, _, _, new_log_pi, *_ = self.policy(next_obs, reparameterize=True, return_log_prob=True)
-        new_curr_actions, _, _, new_curr_log_pi, *_ = self.policy(obs, reparameterize=True, return_log_prob=True)  # 1
-
-
-
+	    
         q_pred = self.func(obs, actions)
         target_q_pred = self.func_target(next_obs, new_next_actions)
         q_pred_odd = self.func(obs, new_curr_actions)
@@ -282,7 +279,7 @@ class PEVITrainer(TorchTrainer):
         # Actor loss Policy Training
         q_new_actions_all = []
         for i in range(self.num_qs):
-            q_new_actions_all.append(self.qfs[i](obs, new_obs_actions))
+            q_new_actions_all.append(self.qfs[i](obs, new_curr_actions))
         q_new_actions = torch.min(torch.hstack(q_new_actions_all), dim=1,
                                   keepdim=True).values
         assert q_new_actions.size() == (batch_size, 1)
